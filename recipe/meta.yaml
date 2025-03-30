@@ -1,5 +1,5 @@
 {% set name = "sf-hamilton-ui" %}
-{% set version = "0.0.15" %}
+{% set version = "0.0.17" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/sf_hamilton_ui-{{ version }}.tar.gz
-  sha256: ee0f353f376077a431591af1226b7ea565b7dccd1f8797033d7a8d68f46cbf9c
+  sha256: 056f2ccfc734fe3610486afb52d2edbd9f163520ac80e68bbe8f5b84e6a94b3e
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -21,18 +21,24 @@ requirements:
     - setuptools
   run:
     - python >={{ python_min }},<4.0
-    - aiohttp
-    - passlib
     - typer
     - django
-    - django-extensions
     - aiofiles
-    - psycopg2-binary
-    - django-ninja >=1.1.0
-    - click
-    - loguru
-    - colorlog
     - requests
+    - aiohttp
+    - loguru
+    - passlib
+    - psycopg2-binary
+    - colorlog
+    - django-extensions
+    - click
+    - django-ninja >=1.1.0
+    # Not in Metayaml
+    #- asgiref
+    #- psycopg2
+    #- pydantic
+    #- pymapd
+    - sf-hamilton
 
 test:
   imports:

@@ -20,24 +20,25 @@ requirements:
     - pip
     - setuptools
   run:
-    - asgiref
-    - pydantic
-    - pymapd
-    - sf-hamilton
     - python >={{ python_min }},<4.0
-    - aiohttp
-    - passlib
     - typer
     - django
-    - django-extensions
     - aiofiles
-    - psycopg2-binary
-    - django-ninja >=1.1.0
-    - click
-    - loguru
-    - colorlog
     - requests
-    # - psycopg2 
+    - aiohttp
+    - loguru
+    - passlib
+    - psycopg2-binary
+    - colorlog
+    - django-extensions
+    - click
+    - django-ninja >=1.1.0
+    # Not in Metayaml
+    #- asgiref
+    #- psycopg2
+    #- pydantic
+    #- pymapd
+    - sf-hamilton
 
 test:
   imports:
